@@ -7,14 +7,13 @@ import { Flex } from "@chakra-ui/react";
 import Header from "./Header";
 import { useToast } from "@chakra-ui/toast";
 
-function Layout({ children }) {
-
-declare const window: Window &
-   typeof globalThis & {
-     FB: any
-   }
+declare global {
+  interface Window {
+    ethereum: any;
+  }
 }
 
+function Layout({ children }) {
   const toast = useToast();
   // https://mainnet.infura.io/v3/7fcc1bbd7e3b48b8b3c757bcf243eb98
   // https://ropsten.infura.io/v3/7fcc1bbd7e3b48b8b3c757bcf243eb98
