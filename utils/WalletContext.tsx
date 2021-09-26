@@ -1,5 +1,12 @@
 import { createContext, useState } from "react";
 
+declare global {
+	interface walletContext {
+		address: any;
+		bal: any;
+	}
+}
+
 export const walletContext = createContext([]);
 
 export function WalletProvider({ children }) {
