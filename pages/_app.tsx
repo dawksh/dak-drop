@@ -1,6 +1,5 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Web3Provider } from "../utils/web3Context";
-import { WalletProvider } from "../utils/walletContext";
 import Layout from "../components/Layout";
 import "@fontsource/inter";
 import { mode } from "@chakra-ui/theme-tools";
@@ -27,13 +26,11 @@ const theme = extendTheme({
 function MyApp({ Component, pageProps }) {
 	return (
 		<Web3Provider>
-			<WalletProvider>
-				<ChakraProvider theme={theme}>
-					<Layout>
-						<Component {...pageProps} />
-					</Layout>
-				</ChakraProvider>
-			</WalletProvider>
+			<ChakraProvider theme={theme}>
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
+			</ChakraProvider>
 		</Web3Provider>
 	);
 }
