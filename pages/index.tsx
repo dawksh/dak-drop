@@ -13,6 +13,7 @@ import abi from "../utils/ContractABI.json";
 import { ethers } from "ethers";
 import { useContext, useState, useEffect } from "react";
 import { useToast } from "@chakra-ui/toast";
+import Head from "next/head";
 
 const contractAddress = "0xf876C6e08B310AaCcd77E54AC2EeF944B842bDBc";
 
@@ -55,6 +56,9 @@ export default function Home() {
 
   return (
     <Box padding={4} minW="100%">
+      <Head>
+        <title>$DAK Drop</title>
+      </Head>
       <Flex
         direction={"column"}
         justifyContent={"center"}
