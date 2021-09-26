@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 // @ts-ignore
-import { walletContext } from "../utils/walletContext";
+// import { walletContext } from "../utils/walletContext";
 import { Web3Context } from "../utils/web3Context";
 import Web3 from "web3";
 import { Flex } from "@chakra-ui/react";
@@ -27,7 +27,7 @@ function Layout({ children }) {
   const [accountAddress, setAccountAddress] = useState(undefined);
   const [accountBalance, setAccountBalance] = useState(undefined);
 
-  const [walletState, setWalletState] = useContext(walletContext);
+  // const [walletState, setWalletState] = useContext(walletContext);
   const [web3Instance, setWeb3Instance] = useContext(Web3Context);
 
   async function loadAccounts() {
@@ -38,10 +38,10 @@ function Layout({ children }) {
     let bal = await web3.eth.getBalance(accounts[0]);
     let ethBal: any = await web3.utils.fromWei(bal, "ether");
     setAccountBalance(ethBal);
-    setWalletState({
-      address: accounts[0],
-      bal: ethBal,
-    });
+    // setWalletState({
+    //   address: accounts[0],
+    //   bal: ethBal,
+    // });
     setWeb3Instance(web3);
     if (window.ethereum.networkVersion != "4") {
       toast({
