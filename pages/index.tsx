@@ -21,7 +21,7 @@ export default function Home() {
   const toast = useToast();
 
   const [inTxn, setInTxn] = useState(false);
-  const [mintVal, setMintVal] = useState(0.001);
+  const [mintVal, setMintVal]: any = useState(0.001);
 
   const safeMint = async () => {
     if (mintVal >= 0.001) {
