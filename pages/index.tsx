@@ -30,7 +30,7 @@ export default function Home() {
       const signer = provider.getSigner();
       const myNFTContract = new ethers.Contract(contractAddress, abi, signer);
 
-      let mintValInHex = ethers.utils.parseEther(`${mintVal}`, "ether");
+      let mintValInHex = ethers.utils.parseEther(`${mintVal}`);
       console.log(mintValInHex._hex);
 
       const mint = await myNFTContract.safeMint(
