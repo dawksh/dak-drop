@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from "react";
+// @ts-ignore
 import { walletContext } from "../utils/walletContext";
 import { Web3Context } from "../utils/web3Context";
 import Web3 from "web3";
